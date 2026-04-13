@@ -84,17 +84,33 @@
         </div>
     </header>
 
-  <section class="home-section hero-art" id="home">
-    <div class="hero-overlay"></div>
-    <div class="hero-glow"></div>
-    <div class="container">
-      <header class="home-section__header">
-        <h1>Yidan Fan</h1>
-        <h2>Visual Communication Designer working across XR, digital humanities, interactive narrative, and spatial emotional design.</h2>
-      </header>
-    </div>
+<section class="home-section hero-landing" id="home">
+  <canvas id="heroCanvas" class="hero-landing__canvas" aria-hidden="true">
+    Your browser does not support canvas.
+  </canvas>
+
+  <div class="hero-landing__overlay" aria-hidden="true"></div>
+
+  <div class="container">
+    <header class="home-section__header hero-landing__content">
+      <p class="hero-landing__kicker">XR · Spatial/Emotional Design · Digital Humanities</p>
+      <h1>Yidan Fan</h1>
+      <h2 class="hero-landing__lead">
+        Visual Communication Designer exploring immersive storytelling, cultural memory, and spatial emotion.
+      </h2>
+
+      <div class="hero-landing__cta">
+        <a class="hero-landing__btn hero-landing__btn--primary js-anchor" href="#projects">View Projects</a>
+        <a class="hero-landing__btn hero-landing__btn--ghost js-anchor" href="#process">Research Approach</a>
+      </div>
+    </header>
+  </div>
+
+  <a class="hero-landing__scroll js-anchor" href="#about" aria-label="Scroll to About">↓</a>
 </section>
 
+
+  
     <section class="about-section" id="about">
         <div class="container">
             <div class="about-card">
