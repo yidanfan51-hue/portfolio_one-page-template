@@ -579,6 +579,60 @@
                 font-size: 32px;
             }
         }
+
+
+
+      .second-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(7, 16, 28, 0.92);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.second-nav .container {
+    min-height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.second-nav__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 64px;
+}
+
+.second-nav__logo span {
+    color: #ffb32b;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.second-nav .menu ul {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.second-nav .menu a {
+    color: rgba(255,255,255,0.88);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.second-nav .menu a:hover {
+    color: #ffb32b;
+}
+      
     </style>
 </head>
 
@@ -602,30 +656,19 @@
     </script>
 
     <header class="main-header">
-        <div class="first-nav">
-            <div class="container">
-                <nav class="first-nav__links">
-                    <ul>
-                        <li><a class="is-selected">English</a></li>
-                        <li><a href="#">中文</a></li>
-                    </ul>
-                </nav>
-                <a class="first-nav__navcontrol icon icon_menu js-navcontrol" href="#">Menu</a>
-            </div>
-        </div>
-
+       
         <div class="second-nav js-nav">
             <div class="container">
                 <a class="second-nav__logo"><span>FY</span></a>
                 <nav class="menu">
                     <ul>
-                        <li><a class="js-link js-anchor is-selected" href="#home">Home</a></li>
-                        <li><a class="js-link js-anchor" href="#about">About</a></li>
-                        <li><a class="js-link js-anchor" href="#services">Focus</a></li>
-                        <li><a class="js-link js-anchor" href="#process">Approach</a></li>
-                        <li><a class="js-link js-anchor" href="#projects">Projects</a></li>
-                        <li><a class="js-link js-anchor" href="#highlights">Highlights</a></li>
-                        <li><a class="js-link js-anchor" href="#contacts">Contact</a></li>
+                        <li><a  href="#home">Home</a>
+                        <li><a  href="#about">About</a>
+                        <li><a href="#services">Focus</a>
+                        <li><a href="#process">Approach</a>
+                        <li><a href="#projects">Projects</a>
+                        <li><a  href="#highlights">Highlights</a>
+                        <li><a  href="#contacts">Contact</a>
                     </ul>
                 </nav>
             </div>
