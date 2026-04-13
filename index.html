@@ -105,6 +105,149 @@
     }
 }
 </style>
+
+  <style>
+.highlights-section {
+    background: linear-gradient(180deg, #07101f 0%, #0b1324 100%);
+    padding: 110px 24px;
+    color: #f4f6fb;
+}
+
+.highlights-container {
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.highlights-header {
+    max-width: 760px;
+    margin-bottom: 56px;
+}
+
+.highlights-eyebrow {
+    margin: 0 0 12px;
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(255, 179, 43, 0.92);
+}
+
+.highlights-header h2 {
+    margin: 0 0 16px;
+    font-size: 46px;
+    line-height: 1.08;
+    color: #ffffff;
+}
+
+.highlights-intro {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.65;
+    color: rgba(235, 240, 248, 0.78);
+}
+
+.highlights-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+}
+
+.highlight-item {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 22px;
+    padding: 26px 24px;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: transform 0.28s ease, border-color 0.28s ease, background 0.28s ease;
+}
+
+.highlight-item:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 179, 43, 0.4);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.highlight-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 2px;
+}
+
+.highlight-tag {
+    display: inline-block;
+    width: fit-content;
+    padding: 7px 12px;
+    border-radius: 999px;
+    background: rgba(255, 179, 43, 0.12);
+    color: #ffb32b;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.highlight-year {
+    font-size: 14px;
+    color: rgba(235, 240, 248, 0.58);
+    letter-spacing: 0.03em;
+}
+
+.highlight-content h3 {
+    margin: 0 0 10px;
+    font-size: 24px;
+    line-height: 1.2;
+    color: #ffffff;
+}
+
+.highlight-content p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(235, 240, 248, 0.78);
+}
+
+@media (max-width: 960px) {
+    .highlights-list {
+        grid-template-columns: 1fr;
+    }
+
+    .highlights-header h2 {
+        font-size: 38px;
+    }
+}
+
+@media (max-width: 640px) {
+    .highlights-section {
+        padding: 84px 20px;
+    }
+
+    .highlight-item {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 22px 18px;
+    }
+
+    .highlights-header h2 {
+        font-size: 32px;
+    }
+
+    .highlights-intro {
+        font-size: 16px;
+    }
+
+    .highlight-content h3 {
+        font-size: 22px;
+    }
+
+    .highlight-content p {
+        font-size: 15px;
+    }
+}
+</style>
   
   <head>
     <meta charset="utf-8">
@@ -217,51 +360,99 @@
         </div>
     </section>
 
-    <section class="common-section" id="services">
-        <div class="container">
-            <header class="common-section__header">
-                <h2>Research & design focus</h2>
-                <h4>Four areas that shape my current practice</h4>
-            </header>
-            <div class="grid-container">
-                <ul class="services services_advisory">
-                    <li class="services__item icon icon_research">
-                        <h4>XR and immersive storytelling</h4>
-                        <p>I design narrative experiences for VR, AR, and spatial interfaces, with attention to atmosphere, temporality, and emotional engagement. I am interested in how immersive systems can support reflection, memory, and embodied understanding.</p>
-                    </li>
-                    <li class="services__item icon icon_strategy">
-                        <h4>Digital humanities and cultural memory</h4>
-                        <p>I translate poetry, local history, and cultural narratives into interactive forms. My work asks how design can reactivate cultural memory through multisensory interaction, spatial media, and contemporary visual language.</p>
-                    </li>
-                    <li class="services__item icon icon_improve">
-                        <h4>AIGC and creative systems</h4>
-                        <p>I explore how AI can support concept generation, image making, story development, and new interaction forms. Rather than treating AI as automation alone, I see it as a co-creative tool for building richer design processes.</p>
-                    </li>
-                </ul>
-                <ul class="services services_pm">
-                    <li class="services__item icon icon_plan">
-                        <h4>Spatial emotional design</h4>
-                        <p>I study how light, sound, motion, color, and visual rhythm shape emotional perception in digital and physical environments. This informs my work in exhibitions, installations, and immersive environments.</p>
-                    </li>
-                    <li class="services__item icon icon_recover">
-                        <h4>Visual communication and interface design</h4>
-                        <p>My background in visual communication supports system thinking as well as detail-oriented execution. I work with layout, typography, information structure, and interaction flow to create clear and expressive interfaces.</p>
-                    </li>
-                    <li class="services__item icon icon_support">
-                        <h4>Prototype building</h4>
-                        <p>I prototype ideas through storyboards, interface mockups, motion concepts, interactive flows, and 3D scenes. I value making ideas tangible early so that form, narrative, and experience can be tested together.</p>
-                    </li>
-                </ul>
-                <div class="advantages">
-                    <h2>What drives my work</h2>
-                    <blockquote>
-                        <p>I am drawn to projects that connect culture and technology in a way that feels intuitive, affective, and intellectually grounded. I care about experiences that do more than communicate information: they should also invite curiosity, empathy, and imagination.</p>
-                        <cite>Fan Yidan</cite>
-                    </blockquote>
+ <section class="highlights-section" id="highlights">
+    <div class="highlights-container">
+        <header class="highlights-header">
+            <p class="highlights-eyebrow">Highlights</p>
+            <h2>Academic, award, and exhibition milestones</h2>
+            <p class="highlights-intro">
+                A concise overview of the academic profile, recognitions, and public-facing outcomes that shape my current research and design practice.
+            </p>
+        </header>
+
+        <div class="highlights-list">
+
+            <article class="highlight-item">
+                <div class="highlight-meta">
+                    <span class="highlight-tag">Academic</span>
+                    <span class="highlight-year">2023–Present</span>
                 </div>
-            </div>
+                <div class="highlight-content">
+                    <h3>M.A. in Visual Communication Design</h3>
+                    <p>
+                        Currently pursuing an M.A. at Wales College, Lanzhou University, with a GPA of 4.31/5.0 and ranked 1 out of 39.
+                    </p>
+                </div>
+            </article>
+
+            <article class="highlight-item">
+                <div class="highlight-meta">
+                    <span class="highlight-tag">Research</span>
+                    <span class="highlight-year">Ongoing</span>
+                </div>
+                <div class="highlight-content">
+                    <h3>Interdisciplinary research practice</h3>
+                    <p>
+                        My research connects digital humanities, interactive narrative, spatial emotion, and visual communication, with publications spanning both design and cross-disciplinary inquiry.
+                    </p>
+                </div>
+            </article>
+
+            <article class="highlight-item">
+                <div class="highlight-meta">
+                    <span class="highlight-tag">Recognition</span>
+                    <span class="highlight-year">2024</span>
+                </div>
+                <div class="highlight-content">
+                    <h3>Provincial First Prize in Future Designer NCDA</h3>
+                    <p>
+                        Recognized for strong work in visual communication and creative practice through the Future Designer NCDA competition.
+                    </p>
+                </div>
+            </article>
+
+            <article class="highlight-item">
+                <div class="highlight-meta">
+                    <span class="highlight-tag">Exhibitions</span>
+                    <span class="highlight-year">2025</span>
+                </div>
+                <div class="highlight-content">
+                    <h3>Selected works exhibited in Beijing</h3>
+                    <p>
+                        The digital media piece <em>Endless Body</em> was selected for the 2025 Midsummer Art Season in Beijing, and the AIGC work <em>Virgin Realm</em> was commercially licensed and exhibited.
+                    </p>
+                </div>
+            </article>
+
+            <article class="highlight-item">
+                <div class="highlight-meta">
+                    <span class="highlight-tag">Awards</span>
+                    <span class="highlight-year">Recent</span>
+                </div>
+                <div class="highlight-content">
+                    <h3>14+ national and provincial design awards</h3>
+                    <p>
+                        Recipient of multiple awards including a National Silver Award in the China Good Creativity and National Digital Art Design Competition.
+                    </p>
+                </div>
+            </article>
+
+            <article class="highlight-item">
+                <div class="highlight-meta">
+                    <span class="highlight-tag">Affiliation</span>
+                    <span class="highlight-year">Current</span>
+                </div>
+                <div class="highlight-content">
+                    <h3>Young member of ASIFA</h3>
+                    <p>
+                        Active in cross-disciplinary design, animation, and creative technology communities through ASIFA International Animated Film Association.
+                    </p>
+                </div>
+            </article>
+
         </div>
-    </section>
+    </div>
+</section>
 
     <section class="common-section" id="process">
         <div class="container">
@@ -363,7 +554,7 @@
                     <li class="testimonials__item">
                         <img src="static/images/logos/placeholder.png" alt="Research and publication">
                         <blockquote>
-                            <p class="icon icon_ql">Research interests span data visualization, interactive narrative, spatial emotion, and digital humanities. Authored a paper published in a top journal in mathematics.</p>
+                            <p class="icon icon_ql">Research interests span data visualization, interactive narrative, spatial emotion, and digital humanities. Authored a paper published in SCI in mathematics.</p>
                             <cite><span class="name">Research,</span><span class="role"> interdisciplinary practice</span></cite>
                         </blockquote>
                     </li>
