@@ -16,357 +16,195 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,300,400,600,700,800%7COpen+Sans+Condensed:300&amp;subset=latin,cyrillic" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="static/css/screen.min.css">
     <link rel="stylesheet" href="static/css/custom.min.css">
-
     <script src="static/js/head.min.js"></script>
+  
 
-    <style>
-        .focus-section {
-            background: linear-gradient(180deg, #09111f 0%, #0b1324 100%);
-            padding: 96px 24px;
-            color: #f4f6fb;
-        }
+<style>
 
-        .focus-container {
-            max-width: 1180px;
-            margin: 0 auto;
-        }
+/* ========== 基础设计系统（只保留一套） ========== */
 
-        .focus-header {
-            max-width: 760px;
-            margin-bottom: 48px;
-        }
+:root {
+    --bg: #07101c;
+    --bg-soft: #0c1628;
+    --panel: rgba(255, 255, 255, 0.04);
+    --panel-strong: rgba(255, 255, 255, 0.06);
+    --border: rgba(255, 255, 255, 0.10);
+    --text: #f3f6fb;
+    --text-soft: rgba(243, 246, 251, 0.78);
+    --text-muted: rgba(243, 246, 251, 0.58);
+    --accent: #ffb32b;
+    --accent-soft: rgba(255, 179, 43, 0.12);
+    --shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
+    --radius-lg: 24px;
+    --radius-md: 18px;
+    --container: 1180px;
+    --section-y: 96px;
+}
 
-        .focus-eyebrow {
-            margin: 0 0 12px;
-            font-size: 13px;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
-            color: rgba(255, 179, 43, 0.92);
-        }
+body {
+    background: linear-gradient(180deg, #07101c 0%, #0b1324 100%);
+    color: var(--text);
+}
 
-        .focus-header h2 {
-            margin: 0 0 16px;
-            font-size: 46px;
-            line-height: 1.08;
-            color: #fff;
-        }
+/* ========== 通用结构 ========== */
 
-        .focus-header p {
-            margin: 0;
-            font-size: 18px;
-            line-height: 1.65;
-            color: rgba(235, 240, 248, 0.78);
-        }
+.section-shell {
+    padding: var(--section-y) 24px;
+    background: linear-gradient(180deg, #07101c 0%, #0c1628 100%);
+}
 
-        .focus-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 22px;
-        }
+.section-container {
+    max-width: var(--container);
+    margin: 0 auto;
+}
 
-        .focus-card {
-            padding: 26px 24px;
-            border: 1px solid rgba(255, 255, 255, 0.09);
-            border-radius: 22px;
-            background: rgba(255, 255, 255, 0.03);
-            transition: transform 0.28s ease, border-color 0.28s ease, background 0.28s ease;
-        }
+.section-heading {
+    max-width: 760px;
+    margin-bottom: 48px;
+}
 
-        .focus-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(255, 179, 43, 0.4);
-            background: rgba(255, 255, 255, 0.05);
-        }
+.section-eyebrow {
+    display: inline-block;
+    margin-bottom: 12px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
 
-        .focus-card__tag {
-            display: inline-block;
-            margin-bottom: 14px;
-            padding: 7px 12px;
-            border-radius: 999px;
-            background: rgba(255, 179, 43, 0.12);
-            color: #ffb32b;
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-        }
+.section-heading h2 {
+    margin: 0 0 14px;
+    font-size: 44px;
+    line-height: 1.08;
+}
 
-        .focus-card h3 {
-            margin: 0 0 10px;
-            font-size: 24px;
-            line-height: 1.2;
-            color: #fff;
-        }
+.section-heading p {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--text-soft);
+}
 
-        .focus-card p {
-            margin: 0;
-            font-size: 16px;
-            line-height: 1.7;
-            color: rgba(235, 240, 248, 0.78);
-        }
+.unified-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(10px);
+}
 
-        .highlights-section {
-            background: linear-gradient(180deg, #07101f 0%, #0b1324 100%);
-            padding: 110px 24px;
-            color: #f4f6fb;
-        }
+.tag-pill {
+    display: inline-block;
+    padding: 7px 12px;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 700;
+}
 
-        .highlights-container {
-            max-width: 1180px;
-            margin: 0 auto;
-        }
+/* ========== Process ========== */
 
-        .highlights-header {
-            max-width: 760px;
-            margin-bottom: 56px;
-        }
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
 
-        .highlights-eyebrow {
-            margin: 0 0 12px;
-            font-size: 13px;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
-            color: rgba(255, 179, 43, 0.92);
-        }
+.process-card {
+    padding: 28px 24px;
+    transition: 0.28s;
+}
 
-        .highlights-header h2 {
-            margin: 0 0 16px;
-            font-size: 46px;
-            line-height: 1.08;
-            color: #ffffff;
-        }
+.process-card:hover {
+    transform: translateY(-4px);
+    background: var(--panel-strong);
+}
 
-        .highlights-intro {
-            margin: 0;
-            font-size: 18px;
-            line-height: 1.65;
-            color: rgba(235, 240, 248, 0.78);
-        }
+/* ========== About ========== */
 
-        .highlights-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 22px;
-        }
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.45fr 0.85fr;
+    gap: 24px;
+}
 
-        .highlight-item {
-            display: grid;
-            grid-template-columns: 150px 1fr;
-            gap: 22px;
-            padding: 26px 24px;
-            border: 1px solid rgba(255, 255, 255, 0.09);
-            border-radius: 22px;
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            transition: transform 0.28s ease, border-color 0.28s ease, background 0.28s ease;
-        }
+.about-main,
+.about-side {
+    padding: 32px 30px;
+}
 
-        .highlight-item:hover {
-            transform: translateY(-4px);
-            border-color: rgba(255, 179, 43, 0.4);
-            background: rgba(255, 255, 255, 0.05);
-        }
+.about-lead {
+    font-size: 22px;
+    line-height: 1.55;
+}
 
-        .highlight-meta {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            padding-top: 2px;
-        }
+.about-main p:not(.about-lead),
+.about-side p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text-soft);
+}
 
-        .highlight-tag {
-            display: inline-block;
-            width: fit-content;
-            padding: 7px 12px;
-            border-radius: 999px;
-            background: rgba(255, 179, 43, 0.12);
-            color: #ffb32b;
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-        }
+/* 👉 修复右侧信息块 */
 
-        .highlight-year {
-            font-size: 14px;
-            color: rgba(235, 240, 248, 0.58);
-            letter-spacing: 0.03em;
-        }
+.meta-item + .meta-item {
+    margin-top: 18px;
+}
 
-        .highlight-content h3 {
-            margin: 0 0 10px;
-            font-size: 24px;
-            line-height: 1.2;
-            color: #ffffff;
-        }
+.meta-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
 
-        .highlight-content p {
-            margin: 0;
-            font-size: 16px;
-            line-height: 1.7;
-            color: rgba(235, 240, 248, 0.78);
-        }
+.meta-value {
+    display: block;
+    font-size: 16px;
+    color: var(--text-soft);
+}
 
-        .spatial-projects-section {
-            padding-top: 96px;
-            padding-bottom: 96px;
-            background: linear-gradient(180deg, #09111f 0%, #10192e 100%);
-            color: #f4f6fb;
-        }
+/* ========== Contact ========== */
 
-        .spatial-projects-section .common-section__header h2,
-        .spatial-projects-section .common-section__header p {
-            color: #f4f6fb;
-        }
+.contact-panel {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 28px;
+    padding: 34px 32px;
+}
 
-        .spatial-projects-field {
-            max-width: 1400px;
-            margin: 40px auto 0;
-            padding: 20px;
-            display: grid;
-            grid-template-columns: 1.2fr 1fr 1fr 1.2fr;
-            gap: 24px;
-            align-items: start;
-        }
+.contact-copy h2 {
+    font-size: 40px;
+}
 
-        .project-node {
-            position: relative;
-            display: block;
-            overflow: hidden;
-            border-radius: 24px;
-            text-decoration: none;
-            background: #111;
-            min-height: 280px;
-            transition: transform 0.35s ease, box-shadow 0.35s ease;
-        }
+.contact-info-modern {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
 
-        .project-node img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.45s ease;
-        }
+/* ========== Responsive ========== */
 
-        .project-node__label {
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            padding: 22px 20px 18px;
-            background: linear-gradient(to top, rgba(0,0,0,0.78), rgba(0,0,0,0.15), rgba(0,0,0,0));
-            color: #fff;
-        }
+@media (max-width: 900px) {
+    .process-grid,
+    .about-grid,
+    .contact-panel {
+        grid-template-columns: 1fr;
+    }
+}
 
-        .project-node__label h3 {
-            margin: 0 0 8px;
-            font-size: 22px;
-            line-height: 1.15;
-            color: #fff;
-        }
+</style>
 
-        .project-node__label p {
-            margin: 0;
-            font-size: 14px;
-            line-height: 1.45;
-            color: rgba(255,255,255,0.9);
-        }
-
-        .project-node:hover {
-            transform: translateY(-8px) scale(1.01);
-            box-shadow: 0 18px 40px rgba(0,0,0,0.18);
-        }
-
-        .project-node:hover img {
-            transform: scale(1.06);
-        }
-
-        .node-large {
-            min-height: 380px;
-        }
-
-        .node-medium {
-            min-height: 300px;
-            margin-top: 60px;
-        }
-
-        @media (max-width: 1100px) {
-            .spatial-projects-field,
-            .focus-grid,
-            .highlights-list {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .node-medium {
-                margin-top: 0;
-            }
-        }
-
-        @media (max-width: 960px) {
-            .highlights-list,
-            .focus-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .highlights-header h2,
-            .focus-header h2 {
-                font-size: 38px;
-            }
-        }
-
-        @media (max-width: 700px) {
-            .spatial-projects-field {
-                grid-template-columns: 1fr;
-            }
-
-            .project-node,
-            .node-large,
-            .node-medium {
-                min-height: 260px;
-                margin-top: 0;
-            }
-
-            .project-node__label h3 {
-                font-size: 20px;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .highlights-section,
-            .focus-section {
-                padding: 84px 20px;
-            }
-
-            .highlight-item {
-                grid-template-columns: 1fr;
-                gap: 16px;
-                padding: 22px 18px;
-            }
-
-            .highlights-header h2,
-            .focus-header h2 {
-                font-size: 32px;
-            }
-
-            .highlights-intro,
-            .focus-header p {
-                font-size: 16px;
-            }
-
-            .highlight-content h3,
-            .focus-card h3 {
-                font-size: 22px;
-            }
-
-            .highlight-content p,
-            .focus-card p {
-                font-size: 15px;
-            }
-        }
-    </style>
+  
 </head>
 
+
+
+  
 <body>
     <script>
         progressJs().setOptions({overlayMode: true, theme: 'custom'}).start();
@@ -442,24 +280,7 @@
         <a class="hero-landing__scroll js-anchor" href="#about" aria-label="Scroll to About">↓</a>
     </section>
 
-    <section class="about-section" id="about">
-        <div class="container">
-            <div class="about-card">
-                <header class="about-card__header">
-                    <h2>About me</h2>
-                    <h4>Designer and researcher exploring how technology can create emotionally resonant cultural experiences.</h4>
-                </header>
-                <div class="about-card__info">
-                    <p>I am currently pursuing an M.A. in Visual Communication Design at Wales College, Lanzhou University, where I work at the intersection of visual communication, immersive media, and cultural storytelling. My practice combines research, concept development, and experience design.</p>
-                    <blockquote>
-                        <p>I am especially interested in XR experience design, interactive narrative, digital humanities, AIGC applications, and spatial emotional design. I use design to turn abstract cultural memory, poetic language, and everyday experience into something people can feel, explore, and remember.</p>
-                    </blockquote>
-                    <p>My recent work includes projects in VR exhibition design, multisensory poetry learning, digital media installations, and AI-assisted creative practice. I also have hands-on experience with Unity, 3D modeling, visual prototyping, and narrative-driven interface design.</p>
-                    <p class="about-card__info-status"><span>Current status:</span> Open to research collaboration, exhibitions, and creative technology opportunities</p>
-                </div>
-            </div>
-        </div>
-    </section>
+  
 
     <section class="focus-section" id="services">
         <div class="focus-container">
@@ -579,46 +400,113 @@
         </div>
     </section>
 
-    <section class="common-section" id="process">
-        <div class="container">
-            <header class="common-section__header">
-                <h2>How I work</h2>
-                <h4>From research insight to immersive form</h4>
-            </header>
-            <div class="grid-container">
-                <ul class="process">
-                    <li class="process__step process__step_research">
-                        <div class="process__step-icon icon icon_research is-active"></div>
-                    </li>
-                    <li class="process__step-info process__step-info_research is-active">
-                        <h3><span>Step 1</span> &mdash; Research the context</h3>
-                        <p>I begin with close reading, literature review, reference analysis, and observation. I try to understand not only the content itself, but also the emotional, cultural, and spatial conditions around it.</p>
-                    </li>
-                    <li class="process__step process__step_develop">
-                        <div class="process__step-icon icon icon_develop"></div>
-                    </li>
-                    <li class="process__step-info process__step-info_develop">
-                        <h3><span>Step 2</span> &mdash; Build the concept</h3>
-                        <p>I translate research into a design direction with keywords, narrative structure, interaction logic, and visual tone. At this stage, I clarify what users should perceive, feel, and remember.</p>
-                    </li>
-                    <li class="process__step process__step_deploy">
-                        <div class="process__step-icon icon icon_deploy"></div>
-                    </li>
-                    <li class="process__step-info process__step-info_deploy">
-                        <h3><span>Step 3</span> &mdash; Prototype the experience</h3>
-                        <p>I use sketches, interface layouts, Figma flows, motion studies, Unity scenes, or 3D models to quickly externalize the idea. Prototyping helps me evaluate storytelling, usability, and emotional pacing together.</p>
-                    </li>
-                    <li class="process__step process__step_deliver">
-                        <div class="process__step-icon icon icon_deliver"></div>
-                    </li>
-                    <li class="process__step-info process__step-info_deliver">
-                        <h3><span>Step 4</span> &mdash; Refine through feedback</h3>
-                        <p>I iterate by comparing the concept with user experience, visual coherence, and research goals. I care about polishing the details that make an experience feel intentional, memorable, and alive.</p>
-                    </li>
-                </ul>
-            </div>
+
+
+
+
+
+
+<section class="section-shell" id="process">
+    <div class="section-container">
+        <div class="section-heading">
+            <span class="section-eyebrow">Approach</span>
+            <h2>How I work</h2>
+            <p>From research insight to immersive form.</p>
         </div>
-    </section>
+
+        <div class="process-grid">
+            <article class="unified-card process-card">
+                <span class="tag-pill">Step 1</span>
+                <h3>Research the context</h3>
+                <p>I begin by observing place, audience, and narrative structure to identify what the experience should reveal.</p>
+            </article>
+
+            <article class="unified-card process-card">
+                <span class="tag-pill">Step 2</span>
+                <h3>Frame the system</h3>
+                <p>I translate research findings into interaction logic, content hierarchy, and spatial storytelling opportunities.</p>
+            </article>
+
+            <article class="unified-card process-card process-card--active">
+                <span class="tag-pill">Step 3</span>
+                <h3>Prototype the experience</h3>
+                <p>I use sketches, interface layouts, motion studies, Unity scenes, and 3D models to test storytelling, usability, and emotional pacing.</p>
+            </article>
+
+            <article class="unified-card process-card">
+                <span class="tag-pill">Step 4</span>
+                <h3>Refine and deliver</h3>
+                <p>I iterate through feedback, improve clarity and coherence, and prepare the project for exhibition, portfolio, or further research.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<section class="section-shell" id="about">
+    <div class="section-container">
+
+        <div class="section-heading">
+            <span class="section-eyebrow">About</span>
+            <h2>Designing Between Culture, Technology, and Experience</h2>
+            <p>
+                I am a design researcher working across AR, VR, and interactive systems,
+                focusing on how temporality, perception, and cultural memory shape immersive experiences.
+            </p>
+        </div>
+
+        <div class="about-grid">
+
+            <div class="about-main unified-card">
+                <p class="about-lead">
+                    My work explores how digital technologies can transform passive viewing into active exploration.
+                </p>
+
+                <p>
+                    Through projects such as AR park experiences and VR embodied environments,
+                    I investigate how users construct meaning through movement, rhythm, and interaction.
+                </p>
+
+                <p>
+                    With a background in design and ongoing research in HCI,
+                    I am particularly interested in AI co-creation, uncertainty in creative systems,
+                    and spatial storytelling.
+                </p>
+            </div>
+
+            <div class="about-side unified-card">
+
+                <div class="meta-item">
+                    <span class="meta-label">Focus</span>
+                    <span class="meta-value">AR / VR / AI Interaction</span>
+                </div>
+
+                <div class="meta-item">
+                    <span class="meta-label">Approach</span>
+                    <span class="meta-value">Research through Design</span>
+                </div>
+
+                <div class="meta-item">
+                    <span class="meta-label">Based</span>
+                    <span class="meta-value">Berkeley / China</span>
+                </div>
+
+                <div class="meta-item">
+                    <span class="meta-label">Interest</span>
+                    <span class="meta-value">Cultural Memory / Temporality</span>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+  
 
     <section class="common-section spatial-projects-section" id="projects">
         <header class="common-section__header">
@@ -661,42 +549,59 @@
         </div>
     </section>
 
-    <div class="contacts-section" id="contacts">
-        <div class="container">
-            <section class="contact-card">
-                <header class="contact-card__header">
-                    <h2>Contact</h2>
-                    <h4>For research collaborations, exhibitions, graduate opportunities, and creative technology projects</h4>
-                </header>
-                <div class="contact-info">
-                    <div class="contact-info__logo">FY</div>
-                    <div class="contact-info__group">
-                        <div class="contact-info__additional">
-                            <p>Research interests: XR, digital humanities, interactive narrative, cultural memory</p>
-                            <p>Tools: Unity, 3D modeling, visual prototyping, interface design</p>
-                            <p>Languages: Chinese and English for academic communication</p>
-                        </div>
-                        <div class="contact-info__vcard vcard">
-                            <h4 class="fn org">Yidan Fan</h4>
-                            <p class="role title">Visual Communication Designer</p>
-                            <p class="icon icon_location">
-                                <a class="adr js-anchor" href="#gmap"><span class="country-name">America</span>,&nbsp;<span class="locality">Berkeley</span></a>
-                            </p>
-                            <p class="icon icon_mail"><a class="email" href="mailto:fanyd2001berkeley@berkeley.edu">fanyd2001berkeley@berkeley.edu</a></p>
-                            <p class="icon icon_phone"><a class="email" href="#">Portfolio site in progress</a></p>
-                        </div>
-                        <ul class="contact-info__social">
-                            <li><a class="icon icon_in" rel="nofollow">LinkedIn link to be added</a></li>
-                            <li><a class="icon icon_fb" rel="nofollow">Instagram / Xiaohongshu link to be added</a></li>
-                            <li><a class="icon icon_twi" rel="nofollow">GitHub link to be added</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-        </div>
-        <div class="gmap" id="gmap"></div>
-    </div>
 
+
+
+  
+    <section class="section-shell" id="contacts">
+    <div class="section-container">
+        <div class="contact-panel unified-card">
+            <div class="contact-copy">
+                <span class="section-eyebrow">Contact</span>
+                <h2>Let’s build meaningful cultural experiences together</h2>
+                <p>
+                    For research collaborations, exhibitions, graduate opportunities, and creative technology projects.
+                </p>
+            </div>
+
+            <div class="contact-info-modern">
+                <div class="contact-item">
+                    <span class="tag-pill">Name</span>
+                    <p>Yidan Fan</p>
+                </div>
+
+                <div class="contact-item">
+                    <span class="tag-pill">Location</span>
+                    <p>Berkeley, CA</p>
+                </div>
+
+                <div class="contact-item">
+                    <span class="tag-pill">Email</span>
+                    <p><a href="mailto:fanyd2001berkeley@berkeley.edu">fanyd2001berkeley@berkeley.edu</a></p>
+                </div>
+
+                <div class="contact-item">
+                    <span class="tag-pill">Research</span>
+                    <p>XR, digital humanities, interactive narrative, cultural memory</p>
+                </div>
+
+                <div class="contact-item">
+                    <span class="tag-pill">Tools</span>
+                    <p>Unity, 3D modeling, visual prototyping, interface design</p>
+                </div>
+
+                <div class="contact-item">
+                    <span class="tag-pill">Status</span>
+                    <p>Portfolio site in progress</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+  
+  
     <footer class="main-footer">
         <div class="container">
             <p class="main-footer__copyright">&copy;&nbsp;<span>Yidan Fan</span></p>
