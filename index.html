@@ -1,24 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-<style>
-.hero-art {
-  position: relative;
-  min-height: 100vh;
-  background-image: url("static/images/bg/iiii.jpg");
-  background-size: cover;
-  background-position: center;
+
+  <style>
+.spatial-projects-section {
+    padding-top: 80px;
+    padding-bottom: 80px;
 }
 
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(10, 12, 20, 0.5),
-    rgba(10, 12, 20, 0.7)
-  );
+.spatial-projects-field {
+    max-width: 1400px;
+    margin: 40px auto 0;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr 1.2fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.project-node {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 24px;
+    text-decoration: none;
+    background: #111;
+    min-height: 280px;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.project-node img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.45s ease;
+}
+
+.project-node__label {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 22px 20px 18px;
+    background: linear-gradient(to top, rgba(0,0,0,0.78), rgba(0,0,0,0.15), rgba(0,0,0,0));
+    color: #fff;
+}
+
+.project-node__label h3 {
+    margin: 0 0 8px;
+    font-size: 22px;
+    line-height: 1.15;
+    color: #fff;
+}
+
+.project-node__label p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.45;
+    color: rgba(255,255,255,0.9);
+}
+
+.project-node:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+}
+
+.project-node:hover img {
+    transform: scale(1.06);
+}
+
+.node-large {
+    min-height: 380px;
+}
+
+.node-medium {
+    min-height: 300px;
+    margin-top: 60px;
+}
+
+@media (max-width: 1100px) {
+    .spatial-projects-field {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .node-medium {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 700px) {
+    .spatial-projects-field {
+        grid-template-columns: 1fr;
+    }
+
+    .project-node,
+    .node-large,
+    .node-medium {
+        min-height: 260px;
+        margin-top: 0;
+    }
+
+    .project-node__label h3 {
+        font-size: 20px;
+    }
 }
 </style>
+  
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -217,51 +304,46 @@
         </div>
     </section>
 
-  <section class="common-section" id="projects">
-        <header class="common-section__header">
-            <h2>Selected projects</h2>
-            <p>Representative directions from my recent design and research practice</p>
-        </header>
-        <div class="projects-wrap">
-            <div class="grid-container">
-                <div class="projects">
-                    <figure class="projects__item">
-                        <img src="static/images/projects/cover-4.png" alt="Redefining cultural memory project">
-                        <figcaption>
-                            <a class="icon icon_link" href="project-ar-narrative.html" rel="nofollow">Redefining Cultural Memory: multisensory interaction for classical poetry education</a>
-                        </figcaption>
+<section class="common-section spatial-projects-section" id="projects">
+    <header class="common-section__header">
+        <h2>Selected Projects</h2>
+        <p>Explore my work through a spatial project field</p>
+    </header>
 
-
-                      
-                    </figure>
-                    <figure class="projects__item">
-                        <img src="static/images/projects/cover_nanliang.png" alt="Nanliang red culture VR exhibition">
-                        <figcaption>
-                            <a class="icon icon_link" href="project-nanliang-vr.html" rel="nofollow">Nanliang Red Culture VR Exhibition: immersive visual development for a national art fund supported project</a>
-                        </figcaption>
-
-                      
-                    </figure>
-                    <figure class="projects__item">
-                        <img src="static/images/projects/detail1-3-1.png" alt="Endless Body digital media piece">
-                        <figcaption>
-                            <a class="icon icon_link" href="project-endless-body.html" rel="nofollow">Endless Body: digital media work selected for the 2025 Midsummer Art Season in Beijing</a>
-                        </figcaption>
-
-                      
-                    </figure>
-                    <figure class="projects__item">
-                        <img src="static/images/projects/01-hero.png" alt="Situated AR Experience">
-                        <figcaption>
-                            <a class="icon icon_link" href="project-wuquan-ar.html" rel="nofollow">Designing Situated AR Experiences for Cultural and Spatial Engagement</a>
-                        </figcaption>
-
-                      
-                    </figure>
-                </div>
+    <div class="spatial-projects-field">
+        <a class="project-node node-large" href="project-ar-narrative.html">
+            <img src="static/images/projects/cover-4.png" alt="Redefining cultural memory project">
+            <div class="project-node__label">
+                <h3>Redefining Cultural Memory</h3>
+                <p>Multisensory interaction for classical poetry education</p>
             </div>
-        </div>
-    </section>
+        </a>
+
+        <a class="project-node node-medium" href="project-nanliang-vr.html">
+            <img src="static/images/projects/cover_nanliang.png" alt="Nanliang red culture VR exhibition">
+            <div class="project-node__label">
+                <h3>Nanliang Red Culture VR Exhibition</h3>
+                <p>Immersive visual development for a national art fund supported project</p>
+            </div>
+        </a>
+
+        <a class="project-node node-medium" href="project-endless-body.html">
+            <img src="static/images/projects/detail1-3-1.png" alt="Endless Body digital media piece">
+            <div class="project-node__label">
+                <h3>Endless Body</h3>
+                <p>Digital media work selected for the 2025 Midsummer Art Season in Beijing</p>
+            </div>
+        </a>
+
+        <a class="project-node node-large" href="project-wuquan-ar.html">
+            <img src="static/images/projects/01-hero.png" alt="Situated AR Experience">
+            <div class="project-node__label">
+                <h3>Situated AR Experiences</h3>
+                <p>Designing for cultural and spatial engagement</p>
+            </div>
+        </a>
+    </div>
+</section>
 
     <section class="common-section" id="testimonials">
         <div class="container">
@@ -336,12 +418,12 @@
                             <p>Languages: Chinese and English for academic communication</p>
                         </div>
                         <div class="contact-info__vcard vcard">
-                            <h4 class="fn org">Yidan Fanan</h4>
+                            <h4 class="fn org">Yidan Fan</h4>
                             <p class="role title">Visual Communication Designer</p>
                             <p class="icon icon_location">
-                                <a class="adr js-anchor" href="#gmap"><span class="country-name">China</span>,&nbsp;<span class="locality">Lanzhou</span></a>
+                                <a class="adr js-anchor" href="#gmap"><span class="country-name">America</span>,&nbsp;<span class="locality">Berkeley</span></a>
                             </p>
-                            <p class="icon icon_mail"><a class="email" href="mailto:fanyd2001berkeley@berkeley.edu/fanyd2024@lzu.edu.cn">fanyd2001berkeley@berkeley.edu/fanyd2024@lzu.edu.cn</a></p>
+                            <p class="icon icon_mail"><a class="email" href="mailto:fanyd2001berkeley@berkeley.edu">fanyd2001berkeley@berkeley.edu</a></p>
                             <p class="icon icon_phone"><a class="email" href="#">Portfolio site in progress</a></p>
                         </div>
                         <ul class="contact-info__social">
@@ -358,7 +440,7 @@
 
     <footer class="main-footer">
         <div class="container">
-            <p class="main-footer__copyright">&copy;&nbsp;<span>Fan Yidan</span></p>
+            <p class="main-footer__copyright">&copy;&nbsp;<span>Yidan Fan</span></p>
             <a class="main-footer__gotop icon icon_gotop js-anchor" href="#home">To top!</a>
         
         </div>
